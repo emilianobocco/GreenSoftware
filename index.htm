@@ -12,22 +12,31 @@
       font-family: 'Segoe UI', sans-serif;
     }
     .hero {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
       color: white;
       padding: 10rem 2rem;
       text-align: center;
     }
-    .hero img {
+    .logo-container {
+      display: inline-block;
+      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      margin-bottom: 2rem;
+    }
+    .logo-container img {
       max-width: 350px;
-      margin-bottom: 1.2rem;
     }
     .hero h1 {
       font-size: 3.5rem;
       font-weight: bold;
+      color: #ffffff;
     }
     .hero p {
       font-size: 1.5rem;
       margin-top: 1rem;
+      color: #ffffff;
     }
     .btn-group-custom {
       margin-top: 3rem;
@@ -57,7 +66,9 @@
 </head>
 <body>
   <header class="hero">
-    <img src="logo.png" alt="Logo NeuroGreen">
+    <div class="logo-container">
+      <img src="logo.png" alt="Logo NeuroGreen">
+    </div>
     <h1>Bienvenido a NeuroGreen</h1>
     <p>Elegí el camino hacia un futuro sustentable</p>
     <div class="btn-group-custom">
