@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -27,32 +28,9 @@
       padding-left: 1rem;
       margin-bottom: 1rem;
     }
-    .card-slider {
-      position: relative;
-      overflow: hidden;
-    }
-    .question-card {
-      display: none;
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      opacity: 0;
-      transform: translateX(100%);
-      transition: all 0.5s ease;
-    }
-    .question-card.active {
-      display: block;
-      opacity: 1;
-      transform: translateX(0);
-    }
-    .card-nav {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 1rem;
-    }
-    .progress-container {
-      margin-top: 1rem;
+    .icon {
+      color: #198754;
+      margin-right: 0.5rem;
     }
   </style>
 </head>
@@ -63,53 +41,20 @@
   </header>
 
   <main class="container my-5">
-    <div class="card-slider">
-      <div class="question-card active">
-        <h2 class="section-title"><i class="fas fa-leaf icon"></i>¿Qué es el green software?</h2>
-        <p>El green software es un enfoque de desarrollo que busca minimizar el impacto ambiental del software...</p>
+    <section class="section-content text-center">
+      <div id="question-card" class="card shadow p-4 mx-auto" style="max-width: 700px; min-height: 280px;">
+        <h2 class="section-title"><i class="fas fa-leaf icon"></i><span id="question-title"></span></h2>
+        <p id="question-text" class="mt-3"></p>
       </div>
-      <div class="question-card">
-        <h2 class="section-title"><i class="fas fa-question icon"></i>¿Por qué es importante?</h2>
-        <p>El green software surge como respuesta a la creciente preocupación por el impacto ambiental de la tecnología...</p>
-      </div>
-      <div class="question-card">
-        <h2 class="section-title"><i class="fas fa-balance-scale icon"></i>¿Para qué sirve?</h2>
-        <p>Tiene como propósito minimizar el impacto ambiental de la tecnología mediante el uso eficiente de recursos...</p>
-      </div>
-      <div class="question-card">
-        <h2 class="section-title"><i class="fas fa-users icon"></i>¿Quién lo impulsa?</h2>
-        <p>Involucra a desarrolladores, arquitectos de software y líderes tecnológicos como principales responsables...</p>
-      </div>
-      <div class="question-card">
-        <h2 class="section-title"><i class="fas fa-clock icon"></i>¿Cuándo se aplica?</h2>
-        <p>El green software debe aplicarse en todas las etapas del ciclo de vida del software...</p>
-      </div>
-      <div class="question-card">
-        <h2 class="section-title"><i class="fas fa-map-marker-alt icon"></i>¿Dónde se implementa?</h2>
-        <p>El green software se implementa en entornos de desarrollo, centros de datos, dispositivos finales...</p>
-      </div>
-      <div class="question-card">
-        <h2 class="section-title"><i class="fas fa-tools icon"></i>¿Cómo se lleva a cabo?</h2>
-        <p>Se lleva a cabo integrando los principios de sostenibilidad en todo el ciclo de vida del software...</p>
-      </div>
-      <div class="question-card">
-        <h2 class="section-title"><i class="fas fa-cogs icon"></i>¿Con qué herramientas?</h2>
-        <p>Se apoya en herramientas como CodeCarbon, PowerAPI y el Carbon Aware SDK para medir el consumo energético...</p>
-      </div>
-      <div class="question-card">
-        <h2 class="section-title"><i class="fas fa-chart-line icon"></i>¿Cuánto impacto tiene?</h2>
-        <p>Busca reducir significativamente el consumo energético y las emisiones de carbono...</p>
-      </div>
-      <div class="card-nav">
-        <button id="prevBtn" class="btn btn-outline-success"><i class="fas fa-chevron-left"></i> Anterior</button>
-        <button id="nextBtn" class="btn btn-outline-success">Siguiente <i class="fas fa-chevron-right"></i></button>
-      </div>
-      <div class="progress-container">
-        <div class="progress">
-          <div class="progress-bar bg-success" role="progressbar" id="progressBar" style="width: 0%"></div>
+
+      <div class="d-flex justify-content-between align-items-center mt-4">
+        <button class="btn btn-outline-success" id="prevBtn"><i class="fas fa-arrow-left"></i> Anterior</button>
+        <div style="flex-grow: 1; height: 8px; background-color: #ddd; margin: 0 15px; border-radius: 5px;">
+          <div id="progressBar" style="height: 100%; width: 0%; background-color: #198754; border-radius: 5px;"></div>
         </div>
+        <button class="btn btn-outline-success" id="nextBtn">Siguiente <i class="fas fa-arrow-right"></i></button>
       </div>
-    </div>
+    </section>
 
     <section class="section-content text-center mt-5">
       <h2 class="section-title"><i class="fab fa-youtube icon"></i>Video Relacionado</h2>
@@ -124,46 +69,55 @@
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="footer bg-success text-white text-center py-3 mt-5">
     <p>NeuroGreen - "De las ideas a la acción sostenible"</p>
     <small>Grupo consultor: Emiliano Bocco, Fernando Calle, Enrique Walter Ignacio, Sol Fátima Moreno Mezzadra, Octavio Testa</small>
   </footer>
 
   <script>
-    const cards = document.querySelectorAll('.question-card');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const progressBar = document.getElementById('progressBar');
-    let current = 0;
+    const questions = [
+      { title: "¿Qué es el green software?", text: "El green software es un enfoque de desarrollo que busca minimizar el impacto ambiental del software mediante la optimización del consumo energético y la reducción de la huella de carbono..." },
+      { title: "¿Por qué es importante?", text: "El green software surge como respuesta a la creciente preocupación por el impacto ambiental de la tecnología..." },
+      { title: "¿Para qué sirve?", text: "Tiene como propósito minimizar el impacto ambiental de la tecnología mediante el uso eficiente de recursos..." },
+      { title: "¿Quién lo impulsa?", text: "Involucra a desarrolladores, arquitectos de software y líderes tecnológicos como principales responsables..." },
+      { title: "¿Cuándo se aplica?", text: "Debe aplicarse en todas las etapas del ciclo de vida del software, siendo clave desde el diseño hasta el mantenimiento..." },
+      { title: "¿Dónde se implementa?", text: "Se implementa en entornos de desarrollo, centros de datos, dispositivos finales y diversas industrias..." },
+      { title: "¿Cómo se lleva a cabo?", text: "Se lleva a cabo integrando los principios de sostenibilidad en todo el ciclo de vida del software..." },
+      { title: "¿Con qué herramientas?", text: "Se apoya en herramientas como CodeCarbon, PowerAPI y el Carbon Aware SDK..." },
+      { title: "¿Cuánto impacto tiene?", text: "Puede disminuir el consumo energético de aplicaciones en un 10-50%..." },
+      { title: "Conclusión", text: "El green software no es solo una tendencia: es una necesidad y una estrategia..." }
+    ];
 
-    function updateCards(index) {
-      cards.forEach((card, i) => {
-        card.classList.remove('active');
-        if (i === index) {
-          setTimeout(() => {
-            card.classList.add('active');
-          }, 50);
-        }
-      });
-      updateProgress();
+    let currentIndex = 0;
+    const titleEl = document.getElementById("question-title");
+    const textEl = document.getElementById("question-text");
+    const progressBar = document.getElementById("progressBar");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    function updateCard(index) {
+      titleEl.textContent = questions[index].title;
+      textEl.textContent = questions[index].text;
+      progressBar.style.width = ((index + 1) / questions.length) * 100 + '%';
+      prevBtn.disabled = index === 0;
+      nextBtn.disabled = index === questions.length - 1;
     }
 
-    function updateProgress() {
-      const percent = ((current + 1) / cards.length) * 100;
-      progressBar.style.width = `${percent}%`;
-    }
-
-    prevBtn.addEventListener('click', () => {
-      current = (current - 1 + cards.length) % cards.length;
-      updateCards(current);
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCard(currentIndex);
+      }
     });
 
-    nextBtn.addEventListener('click', () => {
-      current = (current + 1) % cards.length;
-      updateCards(current);
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < questions.length - 1) {
+        currentIndex++;
+        updateCard(currentIndex);
+      }
     });
 
-    updateProgress();
+    updateCard(currentIndex);
   </script>
 </body>
 </html>
