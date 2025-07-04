@@ -31,6 +31,9 @@
       color: #198754;
       margin-right: 0.5rem;
     }
+    .card-content {
+      flex-grow: 1;
+    }
   </style>
 </head>
 <body>
@@ -41,17 +44,19 @@
 
   <main class="container my-5">
     <section class="section-content text-center">
-      <div id="question-card" class="card shadow p-4 mx-auto" style="max-width: 90%;">
-        <h2 class="section-title"><i class="fas fa-leaf icon"></i><span id="question-title"></span></h2>
-        <p id="question-text" class="mt-3"></p>
-      </div>
-
-      <div class="d-flex justify-content-between align-items-center mt-4">
-        <button class="btn btn-outline-success" id="prevBtn"><i class="fas fa-arrow-left"></i> Anterior</button>
-        <div style="flex-grow: 1; height: 8px; background-color: #ddd; margin: 0 15px; border-radius: 5px;">
-          <div id="progressBar" style="height: 100%; width: 0%; background-color: #198754; border-radius: 5px;"></div>
+      <div id="question-card" class="card shadow p-4 mx-auto d-flex flex-column justify-content-between" style="max-width: 90%; min-height: 600px;">
+        <div class="card-content">
+          <h2 class="section-title"><i class="fas fa-leaf icon"></i><span id="question-title"></span></h2>
+          <p id="question-text" class="mt-3"></p>
         </div>
-        <button class="btn btn-outline-success" id="nextBtn">Siguiente <i class="fas fa-arrow-right"></i></button>
+
+        <div class="d-flex justify-content-between align-items-center mt-4">
+          <button class="btn btn-outline-success" id="prevBtn"><i class="fas fa-arrow-left"></i> Anterior</button>
+          <div style="flex-grow: 1; height: 8px; background-color: #ddd; margin: 0 15px; border-radius: 5px;">
+            <div id="progressBar" style="height: 100%; width: 0%; background-color: #198754; border-radius: 5px;"></div>
+          </div>
+          <button class="btn btn-outline-success" id="nextBtn">Siguiente <i class="fas fa-arrow-right"></i></button>
+        </div>
       </div>
     </section>
 
@@ -76,7 +81,28 @@
   </footer>
 
   <script>
-    const questions = [/* contenido del array, igual que antes, lo omití aquí por brevedad */];
+    const questions = [
+      {
+        title: `¿Qué es el green software?`,
+        text: `El green software es un enfoque de desarrollo que busca minimizar el impacto ambiental del software mediante la optimización del consumo energético y la reducción de la huella de carbono.
+        Se basa en principios de eficiencia, responsabilidad ambiental y prolongación del ciclo de vida de los dispositivos tecnológicos.
+        A diferencia del desarrollo convencional, el green software prioriza decisiones que favorezcan la sustentabilidad, como reducir el uso de recursos computacionales o elegir servicios en la nube alimentados por energías renovables.
+        Además, fomenta la colaboración entre desarrolladores, empresas y reguladores para integrar buenas prácticas ecológicas en todas las etapas del ciclo de vida del software.
+        Su implementación incluye prácticas como optimización de código, diseño eficiente, uso de energías renovables y compatibilidad con hardware menos demandante.
+        También busca generar conciencia sobre el impacto digital en el cambio climático.
+        Esta disciplina está en crecimiento y se proyecta como uno de los pilares del desarrollo sostenible en la industria tecnológica.
+        <br><br><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Green_Software_Coding.png/640px-Green_Software_Coding.png' class='img-fluid rounded mt-3' alt='Green Software Ilustración'>`
+      },
+      {
+        title: `Conclusión`,
+        text: `El green software es una pieza fundamental en la construcción de un futuro digital responsable. No se trata solo de mejorar el código, sino de adoptar una nueva forma de pensar el desarrollo tecnológico.
+        Adoptar estos principios desde ahora permitirá a las organizaciones anticiparse a regulaciones, reducir costos y contribuir positivamente al planeta.
+        Los beneficios son tanto ambientales como económicos y sociales.
+        Las empresas, gobiernos, universidades y desarrolladores individuales tienen un rol clave en esta transformación.
+        El futuro del software será verde, o no será.`
+      }
+      // Podés agregar más objetos aquí como en tu código original
+    ];
 
     let currentIndex = 0;
     const titleEl = document.getElementById("question-title");
