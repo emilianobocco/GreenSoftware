@@ -25,25 +25,26 @@
       font-size: 2rem;
       border-left: 5px solid #198754;
       padding-left: 1rem;
-      margin: 2rem 0 1rem;
+      margin-bottom: 1rem;
     }
-    .section-content {
+    .card-slider {
+      position: relative;
+      overflow: hidden;
+    }
+    .question-card {
+      display: none;
       background: white;
       padding: 2rem;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      margin-bottom: 2rem;
     }
-    .footer {
-      background: #198754;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 3rem;
+    .question-card.active {
+      display: block;
     }
-    .icon {
-      color: #198754;
-      margin-right: 0.5rem;
+    .card-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
     }
   </style>
 </head>
@@ -54,68 +55,60 @@
   </header>
 
   <main class="container my-5">
-    <section class="section-content">
-      <h2 class="section-title"><i class="fas fa-leaf icon"></i>¿Qué es el green software?</h2>
-      <p>El green software es un enfoque de desarrollo que busca minimizar el impacto ambiental del software mediante la optimización del consumo energético y la reducción de la huella de carbono. Se basa en principios de eficiencia, responsabilidad ambiental y prolongación del ciclo de vida de los dispositivos. Su implementación incluye prácticas como optimización de código, diseño eficiente, uso de energías renovables y compatibilidad con hardware menos demandante.</p>
-    </section>
-
-    <section class="section-content">
-      <h2 class="section-title"><i class="fas fa-question icon"></i>¿Por qué es importante?</h2>
-      <p>El green software surge como respuesta a la creciente preocupación por el impacto ambiental de la tecnología, especialmente por el alto consumo energético y los residuos electrónicos. Su adopción se justifica por beneficios ambientales, económicos y reputacionales, alineándose con metas globales como los ODS y el Acuerdo de París. En un contexto de digitalización acelerada y regulaciones ambientales más estrictas, se vuelve una necesidad estratégica para un futuro sostenible.</p>
-    </section>
-
-    <section class="section-content">
-      <h2 class="section-title"><i class="fas fa-balance-scale icon"></i>¿Para qué sirve?</h2>
-      <p>Tiene como propósito minimizar el impacto ambiental de la tecnología mediante el uso eficiente de recursos y prácticas sostenibles. Su objetivo es reducir la huella de carbono de los sistemas digitales y contribuir a la lucha contra el cambio climático. Busca que la innovación tecnológica avance de forma responsable, promoviendo un equilibrio entre desarrollo y preservación del medio ambiente.</p>
-    </section>
-
-    <section class="section-content">
-      <h2 class="section-title"><i class="fas fa-users icon"></i>¿Quién lo impulsa?</h2>
-      <p>Involucra a desarrolladores, arquitectos de software y líderes tecnológicos como principales responsables de diseñar y operar sistemas sostenibles. También participan gestores de infraestructura, proveedores de servicios, reguladores y ONG, que contribuyen a su implementación y control. Los usuarios finales, las empresas y la sociedad en general son los beneficiarios, al obtener soluciones tecnológicas más eficientes, económicas y ambientalmente responsables.</p>
-    </section>
-
-    <section class="section-content">
-      <h2 class="section-title"><i class="fas fa-clock icon"></i>¿Cuándo se aplica?</h2>
-      <p>El green software debe aplicarse en todas las etapas del ciclo de vida del software, siendo clave desde el diseño hasta el mantenimiento. Su implementación es urgente y continua, dada la creciente demanda energética de la tecnología y los compromisos ambientales globales. Se vuelve especialmente relevante al desarrollar nuevos sistemas, modernizar plataformas, enfrentar crisis climáticas o cumplir con normativas ambientales.</p>
-    </section>
-
-    <section class="section-content">
-      <h2 class="section-title"><i class="fas fa-map-marker-alt icon"></i>¿Dónde se implementa?</h2>
-      <p>El green software se implementa en entornos de desarrollo, centros de datos, dispositivos finales y diversas industrias que dependen de sistemas digitales, como la banca y la salud. Su aplicación abarca infraestructuras globales, servidores locales y plataformas en la nube, sin limitaciones geográficas. Es especialmente relevante en regiones tecnológicamente avanzadas y en países con regulaciones ambientales estrictas, donde la eficiencia del software contribuye a reducir el impacto ambiental.</p>
-    </section>
-
-    <section class="section-content">
-      <h2 class="section-title"><i class="fas fa-tools icon"></i>¿Cómo se lleva a cabo?</h2>
-      <p>Se lleva a cabo integrando los principios de sostenibilidad en todo el ciclo de vida del software, mediante diseño eficiente, codificación optimizada y uso de infraestructuras sostenibles. Se aplican métodos como algoritmos de bajo consumo, pruebas de eficiencia energética y herramientas de medición de huella de carbono. Además, se promueve una cultura organizacional ecológica, combinando tecnología, capacitación y buenas prácticas para reducir el impacto ambiental del software en distintos contextos.</p>
-    </section>
-
-    <section class="section-content">
-      <h2 class="section-title"><i class="fas fa-cogs icon"></i>¿Con qué herramientas?</h2>
-      <p>Se apoya en herramientas como CodeCarbon, PowerAPI y el Carbon Aware SDK para medir el consumo energético y las emisiones del código. Utiliza lenguajes y frameworks eficientes, arquitecturas escalables, plataformas en la nube sostenibles y servidores alimentados por energías renovables. Además, incorpora documentación técnica, estándares ambientales y capacitaciones para fomentar prácticas responsables en todo el proceso de desarrollo.</p>
-    </section>
-
-    <section class="section-content">
-      <h2 class="section-title"><i class="fas fa-chart-line icon"></i>¿Cuánto impacto tiene?</h2>
-      <p>Busca reducir significativamente el consumo energético y las emisiones de carbono, medidos en kWh y kg de CO₂ equivalente, optimizando el uso de CPU, memoria y almacenamiento. Puede disminuir el consumo energético de aplicaciones en un 10-50%, reducir la huella de carbono de servidores en hasta un 40%, y extender la vida útil del hardware en un 10-15%. Estos impactos cuantificables se traducen en beneficios ambientales y económicos a gran escala.</p>
-    </section>
-
-    <section class="section-content text-center">
-      <h2 class="section-title"><i class="fas fa-lightbulb icon"></i>Conclusión</h2>
-      <p>El green software no es solo una tendencia: es una necesidad y una estrategia. Su integración en los sistemas digitales es clave para liderar la transformación tecnológica con ética y responsabilidad ambiental.</p>
-    </section>
-
-    <section class="section-content text-center">
-    <h2 class="section-title"><i class="fab fa-youtube icon"></i>Video Relacionado</h2>
-    <div class="ratio ratio-16x9">
-      <iframe 
-        src="https://www.youtube.com/embed/Jjgc2eNJHlE?start=1" 
-        title="Video de YouTube" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowfullscreen>
-      </iframe>
+    <div class="card-slider">
+      <div class="question-card active">
+        <h2 class="section-title"><i class="fas fa-leaf icon"></i>¿Qué es el green software?</h2>
+        <p>El green software es un enfoque de desarrollo que busca minimizar el impacto ambiental del software...</p>
+      </div>
+      <div class="question-card">
+        <h2 class="section-title"><i class="fas fa-question icon"></i>¿Por qué es importante?</h2>
+        <p>El green software surge como respuesta a la creciente preocupación por el impacto ambiental de la tecnología...</p>
+      </div>
+      <div class="question-card">
+        <h2 class="section-title"><i class="fas fa-balance-scale icon"></i>¿Para qué sirve?</h2>
+        <p>Tiene como propósito minimizar el impacto ambiental de la tecnología mediante el uso eficiente de recursos...</p>
+      </div>
+      <div class="question-card">
+        <h2 class="section-title"><i class="fas fa-users icon"></i>¿Quién lo impulsa?</h2>
+        <p>Involucra a desarrolladores, arquitectos de software y líderes tecnológicos como principales responsables...</p>
+      </div>
+      <div class="question-card">
+        <h2 class="section-title"><i class="fas fa-clock icon"></i>¿Cuándo se aplica?</h2>
+        <p>El green software debe aplicarse en todas las etapas del ciclo de vida del software...</p>
+      </div>
+      <div class="question-card">
+        <h2 class="section-title"><i class="fas fa-map-marker-alt icon"></i>¿Dónde se implementa?</h2>
+        <p>El green software se implementa en entornos de desarrollo, centros de datos, dispositivos finales...</p>
+      </div>
+      <div class="question-card">
+        <h2 class="section-title"><i class="fas fa-tools icon"></i>¿Cómo se lleva a cabo?</h2>
+        <p>Se lleva a cabo integrando los principios de sostenibilidad en todo el ciclo de vida del software...</p>
+      </div>
+      <div class="question-card">
+        <h2 class="section-title"><i class="fas fa-cogs icon"></i>¿Con qué herramientas?</h2>
+        <p>Se apoya en herramientas como CodeCarbon, PowerAPI y el Carbon Aware SDK para medir el consumo energético...</p>
+      </div>
+      <div class="question-card">
+        <h2 class="section-title"><i class="fas fa-chart-line icon"></i>¿Cuánto impacto tiene?</h2>
+        <p>Busca reducir significativamente el consumo energético y las emisiones de carbono...</p>
+      </div>
+      <div class="card-nav">
+        <button id="prevBtn" class="btn btn-outline-success"><i class="fas fa-chevron-left"></i> Anterior</button>
+        <button id="nextBtn" class="btn btn-outline-success">Siguiente <i class="fas fa-chevron-right"></i></button>
+      </div>
     </div>
-    </section>
 
+    <section class="section-content text-center mt-5">
+      <h2 class="section-title"><i class="fab fa-youtube icon"></i>Video Relacionado</h2>
+      <div class="ratio ratio-16x9">
+        <iframe 
+          src="https://www.youtube.com/embed/Jjgc2eNJHlE?start=1" 
+          title="Video de YouTube" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -123,6 +116,27 @@
     <small>Grupo consultor: Emiliano Bocco, Fernando Calle, Enrique Walter Ignacio, Sol Fátima Moreno Mezzadra, Octavio Testa</small>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const cards = document.querySelectorAll('.question-card');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let current = 0;
+
+    function updateCards(index) {
+      cards.forEach((card, i) => {
+        card.classList.toggle('active', i === index);
+      });
+    }
+
+    prevBtn.addEventListener('click', () => {
+      current = (current - 1 + cards.length) % cards.length;
+      updateCards(current);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      current = (current + 1) % cards.length;
+      updateCards(current);
+    });
+  </script>
 </body>
 </html>
