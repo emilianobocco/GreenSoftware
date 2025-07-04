@@ -37,13 +37,21 @@
       padding: 2rem;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      opacity: 0;
+      transform: translateX(100%);
+      transition: all 0.5s ease;
     }
     .question-card.active {
       display: block;
+      opacity: 1;
+      transform: translateX(0);
     }
     .card-nav {
       display: flex;
       justify-content: space-between;
+      margin-top: 1rem;
+    }
+    .progress-container {
       margin-top: 1rem;
     }
   </style>
@@ -96,6 +104,11 @@
         <button id="prevBtn" class="btn btn-outline-success"><i class="fas fa-chevron-left"></i> Anterior</button>
         <button id="nextBtn" class="btn btn-outline-success">Siguiente <i class="fas fa-chevron-right"></i></button>
       </div>
+      <div class="progress-container">
+        <div class="progress">
+          <div class="progress-bar bg-success" role="progressbar" id="progressBar" style="width: 0%"></div>
+        </div>
+      </div>
     </div>
 
     <section class="section-content text-center mt-5">
@@ -120,12 +133,24 @@
     const cards = document.querySelectorAll('.question-card');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
+    const progressBar = document.getElementById('progressBar');
     let current = 0;
 
     function updateCards(index) {
       cards.forEach((card, i) => {
-        card.classList.toggle('active', i === index);
+        card.classList.remove('active');
+        if (i === index) {
+          setTimeout(() => {
+            card.classList.add('active');
+          }, 50);
+        }
       });
+      updateProgress();
+    }
+
+    function updateProgress() {
+      const percent = ((current + 1) / cards.length) * 100;
+      progressBar.style.width = `${percent}%`;
     }
 
     prevBtn.addEventListener('click', () => {
@@ -137,6 +162,8 @@
       current = (current + 1) % cards.length;
       updateCards(current);
     });
+
+    updateProgress();
   </script>
 </body>
 </html>
