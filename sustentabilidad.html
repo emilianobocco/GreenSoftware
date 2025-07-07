@@ -45,6 +45,7 @@
     #question-text {
       font-size: 1.125rem;
       line-height: 1.6;
+      text-align: justify;
     }
     button {
       font-size: 1.0625rem;
@@ -96,48 +97,49 @@
   </footer>
 
   <script>
-    const questions = [
-      {
-        title: `¿Qué es la sustentabilidad?`,
-        text: `La sustentabilidad es un enfoque que busca satisfacer las necesidades del presente sin comprometer la capacidad de las futuras generaciones para satisfacer las suyas. No se limita al aspecto ecológico: también abarca la equidad social y la viabilidad económica. Esto implica tomar decisiones que mantengan el equilibrio entre estos tres pilares. Aplicar este concepto significa pensar en cómo nuestras acciones afectan a largo plazo, promoviendo un desarrollo responsable, consciente y regenerativo. La sustentabilidad está presente en iniciativas como la energía renovable, el diseño circular, la planificación urbana verde, o el software eficiente. Es una forma de vida, una ética de cuidado y una estrategia de transformación.`
-      },
-      {
-        title: `¿Por qué es importante?`,
-        text: `Vivimos en un contexto global de crisis múltiples: climática, ecológica, energética y social. La sustentabilidad ofrece respuestas para mitigar estos problemas sin generar otros nuevos. Nos ayuda a preservar los ecosistemas, garantizar derechos y construir economías más estables. También representa una ventaja competitiva en el mundo actual, ya que cada vez más actores demandan compromiso ambiental y social. Enfrentar los desafíos del presente requiere modelos que piensen a largo plazo y respeten los límites del planeta. La sustentabilidad es, en este sentido, una necesidad urgente para la supervivencia y el bienestar colectivo.`
-      },
-      {
-        title: `¿Para qué sirve?`,
-        text: `Sirve para construir un futuro viable y justo, donde el desarrollo no se dé a costa de la destrucción ambiental o la exclusión social. Aporta un marco para tomar decisiones equilibradas, evaluando consecuencias en distintas dimensiones y escalas. Es útil para diseñar políticas públicas, estrategias empresariales, prácticas educativas y tecnologías responsables. También permite prevenir conflictos derivados del uso desigual de recursos o la degradación del entorno. En definitiva, la sustentabilidad es una herramienta para ordenar el crecimiento humano dentro de los límites del planeta y con sentido de justicia social.`
-      },
-      {
-        title: `¿Quién es responsable?`,
-        text: `La responsabilidad es colectiva y compartida. Gobiernos, empresas, organizaciones sociales, instituciones educativas y cada persona tienen un rol. Las decisiones de unos afectan a todos. Por eso, todos debemos actuar desde nuestro lugar: ciudadanos modificando hábitos, empresas innovando con conciencia, políticos regulando con visión de largo plazo. También tienen peso los roles técnicos: ingenieros, docentes, agricultores y profesionales de software pueden aplicar criterios sustentables en sus prácticas. Las generaciones futuras también están implicadas, aunque no puedan participar hoy. La sustentabilidad requiere colaboración y compromiso intersectorial.`
-      },
-      {
-        title: `¿Cuándo se aplica?`,
-        text: `La sustentabilidad debe aplicarse ahora. No es un proyecto futuro, sino una urgencia del presente. Se traduce en acciones cotidianas, decisiones estructurales y cambios de paradigma. Es válida en cualquier momento donde nuestras elecciones tengan impacto ambiental, económico o social. Está presente al consumir, producir, legislar, construir, enseñar o desarrollar tecnología. Además, al proyectarse a largo plazo, permite anticipar escenarios y prevenir crisis. Cuanto antes se integre en nuestras prácticas, mayor será el margen para transformar el presente sin comprometer el futuro.`
-      },
-      {
-        title: `¿Dónde se implementa?`,
-        text: `En todos los lugares donde se desarrollan actividades humanas: ciudades, pueblos, hogares, industrias, oficinas, escuelas y espacios naturales. La sustentabilidad no está restringida a lo rural o ambiental. También se implementa en entornos digitales, decisiones políticas o procesos industriales. Desde una compostera hasta una red de datos, cualquier sistema puede diseñarse con criterios sustentables. Además, se fortalece en espacios globales de decisión, como conferencias climáticas o alianzas internacionales. La clave está en comprender que todos los territorios y escalas pueden ser espacios de acción sustentable.`
-      },
-      {
-        title: `¿Cómo se lleva a cabo?`,
-        text: `Se lleva a cabo mediante la articulación de acciones individuales, colectivas, institucionales y tecnológicas. Incluye desde prácticas como el reciclaje o el uso de energías limpias, hasta el diseño de políticas, la planificación urbana o el desarrollo de software verde. También implica procesos educativos y culturales que cambien nuestra forma de pensar y actuar. La sustentabilidad no se logra con una acción aislada, sino con estrategias sistemáticas que aborden causas estructurales. Identificar problemas, planificar soluciones, medir impacto y corregir el rumbo son partes del proceso.`
-      },
-      {
-        title: `¿Con qué medios?`,
-        text: `Con tecnologías, conocimientos, recursos y herramientas orientadas al cuidado y la eficiencia. Por ejemplo, energías renovables, herramientas digitales, certificaciones ambientales, normativas verdes, financiamiento ético o recursos naturales bien gestionados. También se apoya en el capital humano: personas capacitadas, motivadas y conscientes. La sustentabilidad requiere tanto medios materiales como simbólicos: compromiso, valores, narrativas y redes de cooperación. Todo recurso puede ser un medio para la sustentabilidad, siempre que se use de forma justa, racional y regenerativa.`
-      },
-      {
-        title: `¿Cuánto es necesario?`,
-        text: `Es necesario en la medida en que nuestras acciones generan impacto. No se trata de no usar recursos, sino de usarlos con criterio. La sustentabilidad requiere medir cuánta energía, materia, dinero o tiempo estamos utilizando, y si eso es sostenible a largo plazo. Se apoya en indicadores como la huella de carbono, el consumo energético, el nivel de residuos o la equidad en el acceso. Establecer límites permite prevenir el agotamiento o el desequilibrio. Saber cuánto es suficiente es clave para un desarrollo responsable.`
-      },
-      {
-        title: `Conclusión`,
-        text: `La sustentabilidad es una nueva forma de entender el mundo y nuestro rol en él. No se trata de limitar el desarrollo, sino de transformarlo. Adoptarla como principio guía permite construir organizaciones resilientes, comunidades justas y un planeta habitable. El desafío es pasar del discurso a la acción, del diagnóstico a la transformación. Como líderes, ciudadanos o profesionales, tenemos la posibilidad y la responsabilidad de impulsar ese cambio. La sustentabilidad es el puente entre el presente que vivimos y el futuro que deseamos.`
-      }
-    ];
+      const questions = [
+    {
+      title: `¿Qué es la sustentabilidad?`,
+      text: `La sustentabilidad es un enfoque integral que busca garantizar el bienestar de las generaciones presentes sin comprometer las posibilidades de las futuras. Este principio se basa en tres pilares fundamentales: el ambiental, el social y el económico. Lejos de centrarse únicamente en lo ecológico, abarca la equidad en el acceso a recursos, el respeto por la diversidad cultural y la viabilidad de los sistemas económicos en el tiempo. Adoptar una mirada sustentable implica tomar decisiones que consideren el largo plazo y que promuevan un equilibrio entre producción, consumo y regeneración de los ecosistemas. Esto se traduce en prácticas concretas como el uso racional de la energía, la reducción de residuos, el diseño circular, la construcción verde, o incluso en el desarrollo de software eficiente. Es una ética de cuidado, una estrategia de transformación y una nueva lógica para el desarrollo humano. Incorporar la sustentabilidad como principio rector permite repensar nuestros hábitos, nuestras instituciones y nuestra forma de habitar el mundo.`
+    },
+    {
+      title: `¿Por qué es importante?`,
+      text: `La importancia de la sustentabilidad radica en su capacidad para dar respuestas a las múltiples crisis que atraviesa nuestro mundo. El cambio climático, la pérdida de biodiversidad, la escasez de recursos y la desigualdad social son problemas urgentes y complejos que requieren soluciones sistémicas. La sustentabilidad permite abordar estos desafíos sin generar nuevas consecuencias negativas. Es una herramienta que nos ayuda a preservar los ecosistemas, proteger los derechos de las personas y construir economías más justas y resilientes. También es una ventaja competitiva en el contexto actual, donde empresas, gobiernos y ciudadanos valoran cada vez más el compromiso ambiental y social. Incorporar prácticas sustentables no solo mejora la reputación de una organización, sino que también reduce costos, anticipa regulaciones y fortalece la resiliencia frente a futuros escenarios críticos. En definitiva, la sustentabilidad es clave para garantizar la continuidad de la vida en condiciones dignas, en un planeta limitado pero lleno de posibilidades.`
+    },
+    {
+      title: `¿Para qué sirve?`,
+      text: `La sustentabilidad sirve como brújula para orientar decisiones en todos los niveles de la sociedad, desde el ámbito personal hasta el institucional. Permite construir un futuro donde el desarrollo no se base en la explotación desmedida de recursos ni en la exclusión de sectores sociales. Sirve para ordenar el crecimiento humano dentro de los límites del planeta, garantizando justicia ambiental y equidad social. También es una herramienta poderosa para la gestión pública, ya que proporciona criterios para diseñar políticas que equilibren las necesidades sociales con la protección ambiental. En el ámbito empresarial, permite establecer estrategias de innovación responsable y gestión eficiente. En el educativo, promueve una ciudadanía crítica y comprometida con el entorno. Además, contribuye a prevenir conflictos asociados al uso desigual de los recursos, a anticipar crisis ecológicas y a promover culturas del cuidado. Su utilidad no es solo técnica, sino también ética y política, ya que propone una nueva forma de relacionarnos con el ambiente y entre nosotros.`
+    },
+    {
+      title: `¿Quién es responsable?`,
+      text: `La sustentabilidad es una tarea colectiva que requiere la participación de todos los actores sociales. Gobiernos, empresas, organizaciones de la sociedad civil, instituciones educativas y cada persona tienen una cuota de responsabilidad. Las políticas públicas deben establecer marcos regulatorios que promuevan prácticas sostenibles, mientras que las empresas tienen el deber de innovar con conciencia ambiental y social. La ciudadanía, por su parte, puede ejercer su poder de transformación a través del consumo responsable, la participación en iniciativas comunitarias y la adopción de hábitos más sostenibles. También es clave el rol de los profesionales: ingenieros, urbanistas, docentes, médicos, agricultores y desarrolladores de software tienen la posibilidad de aplicar criterios de sustentabilidad en sus áreas de trabajo. Incluso las generaciones futuras, aunque aún no participen en las decisiones, deben ser consideradas en nuestras acciones presentes. La sustentabilidad requiere colaboración, corresponsabilidad y una mirada intergeneracional que nos permita construir un presente justo y un futuro posible.`
+    },
+    {
+      title: `¿Cuándo se aplica?`,
+      text: `La sustentabilidad no es un objetivo lejano o una meta futura: es una necesidad del presente. Se aplica en cada decisión que tomamos como individuos, organizaciones o sociedades. Cada vez que consumimos energía, diseñamos productos, planificamos políticas o desarrollamos tecnología, estamos frente a una oportunidad de hacerlo de manera más responsable. La sustentabilidad se activa en lo cotidiano: al elegir qué comer, cómo movilizarnos, qué comprar, cómo desechar. Pero también en lo estructural: al legislar, construir infraestructuras, invertir o educar. Su valor radica en su transversalidad, ya que puede y debe estar presente en todas las áreas del quehacer humano. Además, al tener una visión de largo plazo, permite anticiparse a escenarios de crisis y minimizar riesgos futuros. Cuanto antes se integre en nuestras prácticas personales e institucionales, mayor será nuestra capacidad para generar impactos positivos y evitar daños irreversibles al ambiente y a las personas.`
+    },
+    {
+      title: `¿Dónde se implementa?`,
+      text: `La sustentabilidad puede implementarse en todos los espacios donde se desarrollan actividades humanas. En las ciudades, se expresa en políticas de movilidad sustentable, eficiencia energética y espacios verdes. En los hogares, mediante la gestión de residuos, el ahorro de energía y el consumo consciente. En el ámbito rural, a través de prácticas agrícolas regenerativas y el cuidado de los ecosistemas naturales. También se aplica en entornos digitales, como el diseño de plataformas eficientes o el uso de infraestructura con bajo impacto ambiental. Las escuelas pueden implementarla a través de contenidos y proyectos educativos, y las empresas mediante estrategias de responsabilidad social y ambiental. Además, en los ámbitos internacionales, la sustentabilidad se discute y promueve en cumbres climáticas, tratados multilaterales y alianzas globales. No hay territorio, escala o sector donde no sea posible integrar este enfoque. La clave está en comprender que cada decisión puede ser una oportunidad de acción sustentable, sin importar el contexto.`
+    },
+    {
+      title: `¿Cómo se lleva a cabo?`,
+      text: `Llevar a cabo la sustentabilidad implica articular múltiples estrategias, actores y niveles de acción. En primer lugar, requiere un diagnóstico honesto sobre los impactos sociales, económicos y ambientales de nuestras actividades. A partir de allí, es necesario planificar acciones concretas que apunten a reducir dichos impactos, promoviendo la regeneración de los ecosistemas y la inclusión social. Las políticas públicas juegan un rol clave al establecer normas, incentivos y objetivos. Las empresas pueden aplicar herramientas como el análisis de ciclo de vida, la economía circular o los reportes de sustentabilidad. A nivel individual, se puede actuar desde cambios en el estilo de vida hasta la participación en iniciativas comunitarias. También es fundamental el componente educativo y cultural: formar ciudadanos críticos, empáticos y comprometidos con el entorno es indispensable. Llevar a cabo la sustentabilidad no es una tarea lineal ni inmediata, pero es posible si se aborda de manera sistémica, participativa y con visión de largo plazo.`
+    },
+    {
+      title: `¿Con qué medios?`,
+      text: `Los medios para llevar adelante la sustentabilidad son tan diversos como las problemáticas que busca resolver. Existen herramientas tecnológicas como las energías renovables, los sistemas de monitoreo ambiental, las aplicaciones de eficiencia energética o el green software. También están los recursos económicos, como fondos de inversión sostenibles, presupuestos participativos o microcréditos verdes. Pero no todo se reduce a lo técnico o financiero. La sustentabilidad necesita también de medios simbólicos: valores, creencias, narrativas y acuerdos sociales que legitimen una nueva forma de pensar el desarrollo. Las instituciones educativas, los medios de comunicación y los espacios comunitarios cumplen un rol fundamental en la construcción de estos imaginarios. El capital humano, formado por personas capacitadas, comprometidas y conscientes, es uno de los recursos más valiosos. En definitiva, los medios para la sustentabilidad combinan lo material con lo cultural, lo individual con lo colectivo, lo local con lo global, en un entramado que debe ser cuidadosamente gestionado.`
+    },
+    {
+      title: `¿Cuánto es necesario?`,
+      text: `La sustentabilidad es necesaria en la medida en que nuestras actividades impactan sobre el ambiente y la sociedad. No se trata de renunciar al desarrollo, sino de redefinirlo. La clave está en usar los recursos de forma racional, evitando el desperdicio y priorizando lo que es verdaderamente esencial. Para eso, es fundamental contar con indicadores que nos permitan medir: huella de carbono, consumo energético, generación de residuos, equidad en el acceso, entre otros. Saber cuánto utilizamos, cuánto necesitamos y cuánto podemos sostener es central para tomar decisiones responsables. La sustentabilidad implica establecer límites, pero también oportunidades: al reducir lo innecesario, muchas veces se gana en eficiencia, resiliencia y calidad de vida. Entender cuánto es suficiente es una forma de liberarnos de modelos extractivistas y orientarnos hacia formas de vida más equilibradas. Cuanto más precisos seamos al evaluar nuestros consumos, más cerca estaremos de un desarrollo realmente sostenible.`
+    },
+    {
+      title: `Conclusión`,
+      text: `La sustentabilidad es más que un concepto: es una guía para la acción en un mundo en transformación. No se trata de frenar el desarrollo, sino de reorientarlo hacia formas más justas, regenerativas y conscientes. Su adopción implica asumir la responsabilidad por nuestras acciones y sus consecuencias, pero también abre la puerta a una enorme oportunidad de cambio positivo. Como ciudadanos, profesionales, estudiantes o líderes, cada uno de nosotros puede ser parte de esta transformación. La sustentabilidad nos invita a construir soluciones colectivas, a pensar a largo plazo y a poner en el centro la vida en todas sus formas. En un contexto de crisis globales, se vuelve un camino urgente y necesario para garantizar un futuro habitable. Es, en definitiva, el puente ético, técnico y cultural entre el presente que vivimos y el futuro que queremos construir.`
+    }
+  ];
+
 
     let currentIndex = 0;
     const titleEl = document.getElementById("question-title");
